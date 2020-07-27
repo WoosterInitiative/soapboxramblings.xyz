@@ -1,0 +1,7 @@
+{
+    "With Else Inline": {
+        "prefix": "withei",
+        "body": ["{{ with $1 }}${2}{{ else }}${3}{{ end}}"],
+        "description": "With Else, but inline"
+    }
+}

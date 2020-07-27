@@ -13,6 +13,7 @@
 
 {{ with $src.RelPermalink }}
   <img
+    sizes={{ with $.Get "sizes" }}'{{ . }}'{{ else }}"(min-width:35em) 1200px, 100vw"{{ end}}
     srcset='
       {{ . }}?nf_resize=fit&w={{ $tinyw }}, 
       {{ . }}?nf_resize=fit&w={{ $smallw }}, 
