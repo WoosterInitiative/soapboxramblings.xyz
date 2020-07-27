@@ -11,26 +11,13 @@
 {{/* only use images smaller than or equal to the src (original) image size, as Hugo will upscale small images */}}
 {{/* set the sizes attribute to (min-width: 35em) 1200px, 100vw unless overridden in shortcode */}}
 
-{{ with $src }}
-"{{ .Width }}"
+{{ with $src.RelPermalink }}
   <img
     srcset='
-    {{ if ge .Width "{{ $tinyw }}" }}
-      {{ with .RelPermalink }}{{.}}?nf_resize=fit&w={{ $tinyw }}{{ end }}
-    {{ end }}
-    {{ if ge .Width "800" }}
-      {{ with .RelPermalink }}, {{.}}?nf_resize=fit&w=800{{ end }}
-    {{ end }}
-    {{ if ge .Width "1200" }}
-      {{ with .RelPermalink }}, {{.}}?nf_resize=fit&w=1200{{ end }}
-    {{ end }}
-    {{ if ge .Width "1500" }}
-      {{ with .RelPermalink }}, {{.}}?nf_resize=fit&w=1500 {{ end }}
-    {{ end }}'
-    {{ if ge .Width "800" }}
-      src="{{ .RelPermalink }}?nf_resize=fit&w=800"
-    {{ else }}
-      src="{{ .RelPermalink }}"
-    {{ end }}
-    alt="">
+      {{ . }}?nf_resize=fit&w={{ $tinyw }}, 
+      {{ . }}?nf_resize=fit&w={{ $smallw }}, 
+      {{ . }}?nf_resize=fit&w={{ $mediumw }},
+      {{ . }}?nf_resize=fit&w={{ $largew }}'
+      src="{{ . }}?nf_resize=fit&w={{ $smallw }}"
+      alt={{ with $.Get "alt" }}"{{ . }}"{{ else }}""{{ end }}>
 {{ end }}
