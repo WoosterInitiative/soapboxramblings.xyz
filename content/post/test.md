@@ -4,7 +4,7 @@ date = ""
 draft = true
 excerpt = "testing"
 hero = ""
-timeToRead = 1
+timeToRead = 2
 title = "test"
 
 +++
