@@ -12,6 +12,7 @@
 {{/* set the sizes attribute to (min-width: 35em) 1200px, 100vw unless overridden in shortcode */}}
 
 {{ with $src }}
+"{{ .Width }}"
   <img
     srcset='
     {{ if ge .Width "{{ $tinyw }}" }}
