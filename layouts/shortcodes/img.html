@@ -15,10 +15,10 @@
   <img
     sizes={{ with $.Get "sizes" }}'{{ . }}'{{ else }}"(min-width:35em) 1200px, 100vw"{{ end}}
     srcset='
-      {{ . }}?nf_resize=fit&w={{ $tinyw }} {{ $tinyw }}, 
-      {{ . }}?nf_resize=fit&w={{ $smallw }} {{ $smallw }}, 
-      {{ . }}?nf_resize=fit&w={{ $mediumw }} {{ $mediumw }},
-      {{ . }}?nf_resize=fit&w={{ $largew }} {{ $largew }}'
+      {{ . }}?nf_resize=fit&w={{ $tinyw }} {{ $tinyw }}w, 
+      {{ . }}?nf_resize=fit&w={{ $smallw }} {{ $smallw }}w, 
+      {{ . }}?nf_resize=fit&w={{ $mediumw }} {{ $mediumw }}w,
+      {{ . }}?nf_resize=fit&w={{ $largew }} {{ $largew }}w'
       src="{{ . }}?nf_resize=fit&w={{ $smallw }}"
       alt={{ with $.Get "alt" }}"{{ . }}"{{ else }}""{{ end }}>
 {{ end }}
