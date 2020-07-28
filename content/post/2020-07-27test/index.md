@@ -9,4 +9,4 @@ title = "Test"
 
 +++
 
-{{< img src="avatar1" >}}
+{{< picture src="avatar1" >}}

@@ -3,5 +3,13 @@
         "prefix": "withei",
         "body": ["{{ with $1 }}${2}{{ else }}${3}{{ end}}"],
         "description": "With Else, but inline"
+    },
+    "Image": {
+        "prefix": "img",
+        "body": ["{{ img ${1:file} }}"]
+    },
+    "Picture": {
+        "prefix": "pic",
+        "body": ["{{ picture ${1:file} }}"]
     }
 }
